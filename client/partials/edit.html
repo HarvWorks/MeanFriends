@@ -1,0 +1,17 @@
+<div>
+    <div class="row">
+        <div class="col-md-5">
+            <a ng-href = '#/index'>Home</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5">
+            <h2 ng-bind = "user.name"></h2>
+            <form ng-submit = "updateUser()">
+                Name: <span ng-bind = "error.name" class="error"></span> <input type="text" ng-model = 'input.name' class="form-control">
+                Birthday: <span ng-bind = "error.birthday" class="error"></span> <input type="date" ng-model = 'input.birthday' class="form-control">
+                <input type="submit" value = 'Update'>
+            </form>
+        </div>
+    </div>
+</div>

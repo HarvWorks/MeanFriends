@@ -1,0 +1,35 @@
+<div>
+    <p ng-bind = "sucess"></p>
+    <p>
+        Add a <a href="#/new">New Friend</a>
+    </p>
+    Search Friends: <input type="text" ng-model="search" placeholder="Search for friend" class="form-control">
+    <table class="table" ng-hide = "results.length === 0">
+        <thead>
+              <th>
+                  Name
+              </th>
+              <th>
+                  Show
+              </th>
+              <th>
+                  Update
+              </th>
+              <th>
+                  Remove
+              </th>
+        </thead>
+        <tbody>
+          <tr ng-repeat = "friend in friends | orderBy:'name' | filter: search as results">
+              <td ng-bind = "friend.name"></td>
+              <td><a href="#/show/{{friend._id}}">Show</a></td>
+              <td><a href="#/update/{{friend._id}}">Update</a></td>
+              <td><a href="#/index" ng-click = "delete(friend._id)">Delete</a></td>
+          </tr>
+        </tbody>
+    </table>
+    <P ng-if="results.length === 0">
+      No friends match your search....
+    </P>
+</div>
+<!-- ng-controller="indexController" -->
